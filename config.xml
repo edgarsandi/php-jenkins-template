@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description>&lt;img type=&quot;image/svg+xml&quot; height=&quot;300&quot; src=&quot;ws/build/pdepend/overview-pyramid.svg&quot; width=&quot;500&quot;&gt;&lt;/img&gt;&#xd;
-&lt;img type=&quot;image/svg+xml&quot; height=&quot;300&quot; src=&quot;ws/build/pdepend/dependencies.svg&quot; width=&quot;500&quot;&gt;&lt;/img&gt;</description>
+  <description>&lt;img type=&quot;image/svg+xml&quot; height=&quot;300&quot; src=&quot;ws/data/qa/pdepend/overview-pyramid.svg&quot; width=&quot;500&quot;&gt;&lt;/img&gt;&#xd;
+&lt;img type=&quot;image/svg+xml&quot; height=&quot;300&quot; src=&quot;ws/data/qa/pdepend/dependencies.svg&quot; width=&quot;500&quot;&gt;&lt;/img&gt;</description>
   <keepDependencies>false</keepDependencies>
   <properties/>
   <scm class="hudson.scm.NullSCM"/>
@@ -45,7 +45,7 @@
         <failedNewLow></failedNewLow>
       </thresholds>
       <shouldDetectModules>false</shouldDetectModules>
-      <pattern>build/logs/checkstyle.xml</pattern>
+      <pattern>data/qa/checkstyle.xml</pattern>
     </hudson.plugins.checkstyle.CheckStylePublisher>
     <hudson.plugins.pmd.PmdPublisher>
       <healthy></healthy>
@@ -74,7 +74,7 @@
         <failedNewLow></failedNewLow>
       </thresholds>
       <shouldDetectModules>false</shouldDetectModules>
-      <pattern>build/logs/pmd.xml</pattern>
+      <pattern>data/qa/pmd.xml</pattern>
     </hudson.plugins.pmd.PmdPublisher>
     <hudson.plugins.dry.DryPublisher>
       <healthy></healthy>
@@ -103,7 +103,7 @@
         <failedNewLow></failedNewLow>
       </thresholds>
       <shouldDetectModules>false</shouldDetectModules>
-      <pattern>build/logs/pmd-cpd.xml</pattern>
+      <pattern>data/qa/pmd-cpd.xml</pattern>
       <highThreshold>50</highThreshold>
       <normalThreshold>25</normalThreshold>
     </hudson.plugins.dry.DryPublisher>
@@ -114,7 +114,7 @@
           <yaxis>Lines of Code</yaxis>
           <series>
             <hudson.plugins.plot.CSVSeries>
-              <file>build/logs/phploc.csv</file>
+              <file>data/qa/phploc.csv</file>
               <label></label>
               <fileType>csv</fileType>
               <strExclusionSet>
@@ -140,7 +140,7 @@
           <yaxis>Count</yaxis>
           <series>
             <hudson.plugins.plot.CSVSeries>
-              <file>build/logs/phploc.csv</file>
+              <file>data/qa/phploc.csv</file>
               <label></label>
               <fileType>csv</fileType>
               <strExclusionSet>
@@ -172,7 +172,7 @@
           <yaxis>Average Non-Comment Lines of Code</yaxis>
           <series>
             <hudson.plugins.plot.CSVSeries>
-              <file>build/logs/phploc.csv</file>
+              <file>data/qa/phploc.csv</file>
               <label></label>
               <fileType>csv</fileType>
               <strExclusionSet>
@@ -197,7 +197,7 @@
           <yaxis>Cyclomatic Complexity by Structure</yaxis>
           <series>
             <hudson.plugins.plot.CSVSeries>
-              <file>build/logs/phploc.csv</file>
+              <file>data/qa/phploc.csv</file>
               <label></label>
               <fileType>csv</fileType>
               <strExclusionSet>
@@ -222,7 +222,7 @@
           <yaxis>Count</yaxis>
           <series>
             <hudson.plugins.plot.CSVSeries>
-              <file>build/logs/phploc.csv</file>
+              <file>data/qa/phploc.csv</file>
               <label></label>
               <fileType>csv</fileType>
               <strExclusionSet>
@@ -248,7 +248,7 @@
           <yaxis>Count</yaxis>
           <series>
             <hudson.plugins.plot.CSVSeries>
-              <file>build/logs/phploc.csv</file>
+              <file>data/qa/phploc.csv</file>
               <label></label>
               <fileType>csv</fileType>
               <strExclusionSet>
@@ -276,7 +276,7 @@
           <yaxis>Count</yaxis>
           <series>
             <hudson.plugins.plot.CSVSeries>
-              <file>build/logs/phploc.csv</file>
+              <file>data/qa/phploc.csv</file>
               <label></label>
               <fileType>csv</fileType>
               <strExclusionSet>
@@ -302,7 +302,7 @@
           <yaxis>Count</yaxis>
           <series>
             <hudson.plugins.plot.CSVSeries>
-              <file>build/logs/phploc.csv</file>
+              <file>data/qa/phploc.csv</file>
               <label></label>
               <fileType>csv</fileType>
               <strExclusionSet>
@@ -330,7 +330,7 @@
     <org.jenkinsci.plugins.cloverphp.CloverPublisher>
       <publishHtmlReport>true</publishHtmlReport>
       <reportDir>build/coverage</reportDir>
-      <xmlLocation>build/logs/clover.xml</xmlLocation>
+      <xmlLocation>data/qa/clover.xml</xmlLocation>
       <disableArchiving>false</disableArchiving>
       <healthyTarget>
         <methodCoverage>70</methodCoverage>
@@ -342,15 +342,8 @@
     <htmlpublisher.HtmlPublisher>
       <reportTargets>
         <htmlpublisher.HtmlPublisherTarget>
-          <reportName>API Documentation</reportName>
-          <reportDir>build/api</reportDir>
-          <reportFiles>index.xhtml</reportFiles>
-          <keepAll>true</keepAll>
-          <wrapperName>htmlpublisher-wrapper.html</wrapperName>
-        </htmlpublisher.HtmlPublisherTarget>
-        <htmlpublisher.HtmlPublisherTarget>
           <reportName>Code Browser</reportName>
-          <reportDir>build/code-browser</reportDir>
+          <reportDir>data/qa/phpcb</reportDir>
           <reportFiles>index.html</reportFiles>
           <keepAll>true</keepAll>
           <wrapperName>htmlpublisher-wrapper.html</wrapperName>
@@ -360,7 +353,7 @@
     <xunit>
       <types>
         <PHPUnitJunitHudsonTestType>
-          <pattern>build/logs/junit.xml</pattern>
+          <pattern>data/qa/junit.xml</pattern>
           <faildedIfNotNew>true</faildedIfNotNew>
           <deleteOutputFiles>true</deleteOutputFiles>
           <stopProcessingIfError>true</stopProcessingIfError>
@@ -374,16 +367,16 @@
           <failureNewThreshold>0</failureNewThreshold>
         </org.jenkinsci.plugins.xunit.threshold.FailedThreshold>
         <org.jenkinsci.plugins.xunit.threshold.SkippedThreshold>
-          <unstableThreshold>0</unstableThreshold>
+          <unstableThreshold>5</unstableThreshold>
           <unstableNewThreshold>0</unstableNewThreshold>
-          <failureThreshold>0</failureThreshold>
-          <failureNewThreshold>0</failureNewThreshold>
+          <failureThreshold>10</failureThreshold>
+          <failureNewThreshold>1</failureNewThreshold>
         </org.jenkinsci.plugins.xunit.threshold.SkippedThreshold>
       </thresholds>
       <thresholdMode>1</thresholdMode>
     </xunit>
     <hudson.plugins.jdepend.JDependRecorder>
-      <configuredJDependFile>build/logs/jdepend.xml</configuredJDependFile>
+      <configuredJDependFile>data/qa/jdepend.xml</configuredJDependFile>
     </hudson.plugins.jdepend.JDependRecorder>
     <hudson.plugins.violations.ViolationsPublisher>
       <config>
@@ -396,18 +389,18 @@
             <string>checkstyle</string>
             <hudson.plugins.violations.TypeConfig>
               <type>checkstyle</type>
-              <min>10</min>
+              <min>1</min>
               <max>999</max>
               <unstable>999</unstable>
               <usePattern>false</usePattern>
-              <pattern>build/logs/checkstyle.xml</pattern>
+              <pattern>data/qa/checkstyle.xml</pattern>
             </hudson.plugins.violations.TypeConfig>
           </entry>
           <entry>
             <string>codenarc</string>
             <hudson.plugins.violations.TypeConfig>
               <type>codenarc</type>
-              <min>10</min>
+              <min>1</min>
               <max>999</max>
               <unstable>999</unstable>
               <usePattern>false</usePattern>
@@ -418,18 +411,18 @@
             <string>cpd</string>
             <hudson.plugins.violations.TypeConfig>
               <type>cpd</type>
-              <min>10</min>
+              <min>1</min>
               <max>999</max>
               <unstable>999</unstable>
               <usePattern>false</usePattern>
-              <pattern>build/logs/pmd-cpd.xml</pattern>
+              <pattern>data/qa/pmd-cpd.xml</pattern>
             </hudson.plugins.violations.TypeConfig>
           </entry>
           <entry>
             <string>cpplint</string>
             <hudson.plugins.violations.TypeConfig>
               <type>cpplint</type>
-              <min>10</min>
+              <min>1</min>
               <max>999</max>
               <unstable>999</unstable>
               <usePattern>false</usePattern>
@@ -440,7 +433,7 @@
             <string>csslint</string>
             <hudson.plugins.violations.TypeConfig>
               <type>csslint</type>
-              <min>10</min>
+              <min>1</min>
               <max>999</max>
               <unstable>999</unstable>
               <usePattern>false</usePattern>
@@ -451,7 +444,7 @@
             <string>findbugs</string>
             <hudson.plugins.violations.TypeConfig>
               <type>findbugs</type>
-              <min>10</min>
+              <min>1</min>
               <max>999</max>
               <unstable>999</unstable>
               <usePattern>false</usePattern>
@@ -462,7 +455,7 @@
             <string>fxcop</string>
             <hudson.plugins.violations.TypeConfig>
               <type>fxcop</type>
-              <min>10</min>
+              <min>1</min>
               <max>999</max>
               <unstable>999</unstable>
               <usePattern>false</usePattern>
@@ -473,7 +466,7 @@
             <string>gendarme</string>
             <hudson.plugins.violations.TypeConfig>
               <type>gendarme</type>
-              <min>10</min>
+              <min>1</min>
               <max>999</max>
               <unstable>999</unstable>
               <usePattern>false</usePattern>
@@ -484,7 +477,7 @@
             <string>jcreport</string>
             <hudson.plugins.violations.TypeConfig>
               <type>jcreport</type>
-              <min>10</min>
+              <min>1</min>
               <max>999</max>
               <unstable>999</unstable>
               <usePattern>false</usePattern>
@@ -495,7 +488,7 @@
             <string>jslint</string>
             <hudson.plugins.violations.TypeConfig>
               <type>jslint</type>
-              <min>10</min>
+              <min>1</min>
               <max>999</max>
               <unstable>999</unstable>
               <usePattern>false</usePattern>
@@ -506,7 +499,7 @@
             <string>pep8</string>
             <hudson.plugins.violations.TypeConfig>
               <type>pep8</type>
-              <min>10</min>
+              <min>1</min>
               <max>999</max>
               <unstable>999</unstable>
               <usePattern>false</usePattern>
@@ -517,18 +510,18 @@
             <string>pmd</string>
             <hudson.plugins.violations.TypeConfig>
               <type>pmd</type>
-              <min>10</min>
+              <min>1</min>
               <max>999</max>
               <unstable>999</unstable>
               <usePattern>false</usePattern>
-              <pattern>build/logs/pmd.xml</pattern>
+              <pattern>data/qa/pmd.xml</pattern>
             </hudson.plugins.violations.TypeConfig>
           </entry>
           <entry>
             <string>pylint</string>
             <hudson.plugins.violations.TypeConfig>
               <type>pylint</type>
-              <min>10</min>
+              <min>1</min>
               <max>999</max>
               <unstable>999</unstable>
               <usePattern>false</usePattern>
@@ -539,7 +532,7 @@
             <string>simian</string>
             <hudson.plugins.violations.TypeConfig>
               <type>simian</type>
-              <min>10</min>
+              <min>1</min>
               <max>999</max>
               <unstable>999</unstable>
               <usePattern>false</usePattern>
@@ -550,7 +543,7 @@
             <string>stylecop</string>
             <hudson.plugins.violations.TypeConfig>
               <type>stylecop</type>
-              <min>10</min>
+              <min>1</min>
               <max>999</max>
               <unstable>999</unstable>
               <usePattern>false</usePattern>
